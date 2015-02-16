@@ -1,0 +1,12 @@
+<? xml version="1.0" encoding="UTF-8" ?>
+<riverdata>
+	 <title>九頭竜川の流域</title>
+	 <basin>
+		<side>上流</side>
+		<pref>岐阜県</pref>
+	</basin>
+	 <basin>
+		<side>下流</side>
+		<pref>福井県</pref>
+	</basin>
+</riverdata>
