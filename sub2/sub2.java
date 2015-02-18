@@ -19,7 +19,7 @@ public class sub2{
         FileOutputStream xyz = new FileOutputStream("output.xml");
         OutputStreamWriter out = new OutputStreamWriter(xyz, "utf-8");
         System.out.println("\nルートノード名:" + node.getNodeName());
-        String header = "<? xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
+        String header = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
         out.write(header);
         out.write("<" + node.getNodeName() + ">\n" );
         System.out.println("ルートノードタイプ:" + node.getNodeType());
