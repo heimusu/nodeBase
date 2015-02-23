@@ -1,3 +1,5 @@
+//演習1のプログラム
+
 import java.io.*;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;

@@ -1,5 +1,4 @@
-//演習4-1のプログラム
-//深さ3のノードまでしか対応できなかった
+//演習4-2のプログラム
 
 import java.io.*;
 import org.w3c.dom.*;
@@ -8,7 +7,7 @@ import javax.xml.parsers.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class sub4{
+public class sub5{
     public static void main(String args[]) throws Exception{
         Node node,ndTemp;
         NodeList nodeX;
@@ -18,6 +17,9 @@ public class sub4{
         int flag1 = 0;
         int flag2 = 0;
         int flag3 = 0;
+
+        //検索する文字列
+        String input = "This work may be freely copied and distributed worldwide.";
 
         Document document = DocumentBuilderFactory
                                 .newInstance()
@@ -100,6 +102,9 @@ public class sub4{
                     if(output.length() != 0){
                         //System.out.println("エレメント内データ:\"" + output + "\"");
                         out.write(output + "</" + ndTemp.getNodeName() + ">\n");
+                        if(output.equals(input)){
+                            System.out.println("/" + node.getNodeName() + "/" + ndTemp.getNodeName());
+                        }
                     }
                 }
                 //次の要素を見つけに行く
@@ -130,13 +135,16 @@ public class sub4{
                                 String output = ndTemp3.getNodeValue();
                                 output = output.replaceAll("\n","");
                                 if(flag1 == 1 && flag2 == 1 && flag3 == 1){
-                                    System.out.println(output);
+                                    //System.out.println(output);
                                     flag3 = 0;
                                 }
                                 //output = output.replaceAll(" ","");
                                 if(output.length() != 0){
                                     //System.out.println("エレメント内データ:\"" + output + "\"");
                                     out.write(output + "</" + ndTemp2.getNodeName() + ">\n");
+                                    if(output.equals(input)){
+                                        System.out.println("/" + node.getNodeName() + "/" + ndTemp.getNodeName() + "/" + ndTemp2.getNodeName());
+                                    }
                                 }
                             }
                             //4段目までは見つけられるように
@@ -165,6 +173,9 @@ public class sub4{
                                             if(output.length() != 0){
                                                 //System.out.println("エレメント内データ:\"" + output + "\"");
                                                 out.write(output + "</" + ndTemp3.getNodeName() + ">\n");
+                                                if(output.equals(input)){
+                                                    System.out.println("/" + node.getNodeName() + "/" + ndTemp.getNodeName() + "/" + ndTemp2.getNodeName() + "/" + ndTemp3.getNodeName());
+                                                }
                                             }
                                         }
                                         //5段目までは見つけられるように
@@ -193,6 +204,9 @@ public class sub4{
                                                         if(output.length() != 0){
                                                             //System.out.println("エレメント内データ:\"" + output + "\"");
                                                             out.write(output + "</" + ndTemp4.getNodeName() + ">\n");
+                                                if(output.equals(input)){
+                                                    System.out.println("/" + node.getNodeName() + "/" + ndTemp.getNodeName() + "/" + ndTemp2.getNodeName() + "/" + ndTemp3.getNodeName() + "/" + ndTemp4.getNodeName());
+                                                }
                                                         }
                                                     }
                                                 }
